@@ -1,7 +1,4 @@
-export default function Home() {
-	return (
-		<div>
-			<p>Home</p>
-		</div>
-	);
+import { Hero } from "@/features";
+export default function HomePage() {
+	return <Hero />;
 }

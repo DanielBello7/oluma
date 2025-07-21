@@ -1,3 +1,4 @@
-export default function DashboardHome() {
-	return <div>Dashboard Home</div>;
+import { Home } from "@/features";
+export default function DashboardHomePage() {
+	return <Home />;
 }

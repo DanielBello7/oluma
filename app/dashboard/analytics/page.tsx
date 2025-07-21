@@ -1,3 +1,4 @@
-export default function Analytics() {
-	return <div>Analytics</div>;
+import { Analytics } from "@/features";
+export default function AnalyticsPage() {
+	return <Analytics />;
 }

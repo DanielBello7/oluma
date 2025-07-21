@@ -1,3 +1,4 @@
-export default function Transactions() {
-	return <div>Transactions</div>;
+import { Transaction } from "@/features";
+export default function TransactionsPage() {
+	return <Transaction />;
 }
