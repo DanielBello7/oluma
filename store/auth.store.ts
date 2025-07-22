@@ -1,5 +1,5 @@
-import { create } from "zustand";
-import { createJSONStorage, persist } from "zustand/middleware";
+import {create} from 'zustand';
+import {createJSONStorage, persist} from 'zustand/middleware';
 
 type AuthData = {
 	jwt_token: string | null;
@@ -41,8 +41,8 @@ export const useAuth = create<State>()(
 			},
 		}),
 		{
-			name: "auth-storage",
+			name: 'auth-storage',
 			storage: createJSONStorage(() => localStorage),
-		}
-	)
+		},
+	),
 );

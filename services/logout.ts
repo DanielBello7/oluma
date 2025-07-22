@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 export const Logout = async (): Promise<void> => {
-	await axios.post("/logout");
+	await axios.post('/logout');
 };

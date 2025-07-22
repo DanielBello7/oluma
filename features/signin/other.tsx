@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui";
+import {Button} from '@/components/ui';
 export const Other = () => {
 	return (
 		<div className="grid gap-4 sm:grid-cols-2">

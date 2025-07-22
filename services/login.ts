@@ -1,5 +1,5 @@
-import axios from "axios";
-import { z } from "zod";
+import axios from 'axios';
+import {z} from 'zod';
 
 export const auth_response_assert = z.object({
 	userid: z.string(),
@@ -18,6 +18,6 @@ type Params = {
 	password: string;
 };
 export const Login = async (params: Params): Promise<LoginResponse> => {
-	const response = await axios.post("/login", { data: params });
+	const response = await axios.post('/login', {data: params});
 	return auth_response_assert.parse(response.data);
 };

@@ -10,7 +10,7 @@
 export function combine<T extends Record<string, unknown>>(
 	key: keyof T,
 	current: T[],
-	inserts: T[]
+	inserts: T[],
 ) {
 	const exists = current.map((k) => k[key]);
 	const picked = inserts.filter((a) => !exists.includes(a[key]));

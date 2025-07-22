@@ -1,1 +1,1 @@
-export * as envs from "./envs";
+export * as envs from './envs';

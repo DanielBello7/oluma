@@ -1,5 +1,5 @@
-import { AuthGate, Dashboard } from "@/features";
-import { ReactNode } from "react";
+import {AuthGate, Dashboard} from '@/features';
+import {ReactNode} from 'react';
 
 type Props = {
 	children: ReactNode;

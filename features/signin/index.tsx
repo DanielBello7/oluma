@@ -1,8 +1,8 @@
-import { Under } from "./under";
-import { Title } from "./title";
-import { Forms } from "./forms";
-import { Navel } from "./navel";
-import { Other } from "./other";
+import {Under} from './under';
+import {Title} from './title';
+import {Forms} from './forms';
+import {Navel} from './navel';
+import {Other} from './other';
 
 export const SignIn = () => {
 	return (

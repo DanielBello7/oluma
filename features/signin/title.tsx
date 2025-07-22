@@ -1,4 +1,4 @@
-import { GalleryVerticalEnd } from "lucide-react";
+import {GalleryVerticalEnd} from 'lucide-react';
 export const Title = () => {
 	return (
 		<div className="flex flex-col items-center gap-2">
@@ -10,7 +10,7 @@ export const Title = () => {
 			</a>
 			<h1 className="text-xl font-bold">Welcome to Acme Inc.</h1>
 			<div className="text-center text-sm">
-				Don&apos;t have an account?{" "}
+				Don&apos;t have an account?{' '}
 				<a href="#" className="underline underline-offset-4">
 					Sign up
 				</a>
