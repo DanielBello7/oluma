@@ -1,12 +1,5 @@
-import { columns } from './columns';
-import { DataTable } from './table';
-
-type Payment = {
-	id: string;
-	amount: number;
-	status: 'pending' | 'processing' | 'success' | 'failed';
-	email: string;
-};
+import { DataTable } from '@/components/datatable';
+import { Payment, columns } from './columns';
 
 export const payments: Payment[] = [
 	{
@@ -21,13 +14,17 @@ export const payments: Payment[] = [
 		status: 'processing',
 		email: 'example@gmail.com',
 	},
-	// ...
 ];
 
 async function getData(): Promise<Payment[]> {
-	// Fetch data from your API here.
+	await new Promise((resolve) => {
+		setTimeout(() => {
+			resolve(true);
+		}, 5000);
+	});
 	return payments;
 }
+
 export const Recents = async () => {
 	const data = await getData();
 	return (
