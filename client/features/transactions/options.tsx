@@ -3,15 +3,13 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/';
-import { User } from '@/types';
+import { Transaction } from '@/types';
 import { Ellipsis } from 'lucide-react';
 
 type Props = {
-  data: User;
+  data: Transaction;
 };
 export const Options = (props: Props) => {
   return (
@@ -21,12 +19,9 @@ export const Options = (props: Props) => {
           <Ellipsis size={15} />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="start">
-        <DropdownMenuLabel>Actions</DropdownMenuLabel>
-        <DropdownMenuItem>Copy payment ID</DropdownMenuItem>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>View customer</DropdownMenuItem>
-        <DropdownMenuItem>View payment details</DropdownMenuItem>
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem>Approve</DropdownMenuItem>
+        <DropdownMenuItem>Reject</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

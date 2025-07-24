@@ -2,8 +2,8 @@
 
 import { DataTable } from '@/components/datatable';
 import { Render } from '@/components/render';
+import { columns } from './columns';
 import { useLogic } from './use-logic';
-import { columns } from './user-columns';
 
 export const Users = () => {
   // prettier-ignore
@@ -21,7 +21,7 @@ export const Users = () => {
         <p className="text-muted-foreground">List of registered users</p>
       </div>
       <Render error={error} isError={isError} isLoading={isPending}>
-        <DataTable columns={columns} data={data} />
+        <DataTable columns={columns} data={data} pagination={true} />
       </Render>
     </div>
   );

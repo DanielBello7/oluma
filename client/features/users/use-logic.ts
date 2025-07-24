@@ -1,5 +1,6 @@
 import { contracts } from '@/constants';
 import { parse_contract_struct } from '@/lib/parse-contract';
+import { wait } from '@/lib/wait';
 import { useAccount, useUser } from '@/store';
 import { useQuery } from '@tanstack/react-query';
 
@@ -15,6 +16,7 @@ export const useLogic = () => {
   } = useQuery({
     queryKey: ['users'],
     queryFn: async () => {
+      await wait()
       const result = await get_users();
       insert_users(result);
       return result;
