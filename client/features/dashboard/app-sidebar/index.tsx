@@ -14,7 +14,7 @@ export const AppSidebar = () => {
     <Sidebar className="h-full" collapsible="icon">
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
+          <SidebarGroupLabel>Crypto Finance</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {sidebaritems.map((item, idx) => (

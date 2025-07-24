@@ -1,4 +1,4 @@
-export * from './analytics';
+export * from './approvals';
 export * from './authgate';
 export * from './dashboard';
 export * from './home';

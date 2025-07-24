@@ -15,7 +15,9 @@ export const Dashboard = (props: Props) => {
         <AppSidebar />
         <div className="grow flex flex-col">
           <Header />
-          <div className="grow">{props.children}</div>
+          <div className="grow overflow-y-scroll pb-10">
+            {props.children}
+          </div>
         </div>
       </div>
     </SidebarProvider>

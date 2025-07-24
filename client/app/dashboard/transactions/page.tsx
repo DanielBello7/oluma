@@ -1,4 +1,4 @@
-import {Transaction} from '@/features';
+import { Transaction } from '@/features';
 export default function TransactionsPage() {
-	return <Transaction />;
+  return <Transaction />;
 }
