@@ -1,4 +1,4 @@
-import {Hero} from '@/features';
-export default function HomePage() {
-	return <Hero />;
+import { SignIn } from '@/features';
+export default function SignInPage() {
+  return <SignIn />;
 }

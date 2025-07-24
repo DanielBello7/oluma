@@ -1,27 +1,33 @@
+import { User } from '@/types';
+import { ethers } from 'ethers';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 
-type AuthData = {
-  jwt_token: string | null;
-  refresh: string | null;
-  user: Record<string, unknown> | null;
-  expires: Date;
+type ETH = {
+  signer: ethers.JsonRpcSigner;
+  provider: ethers.BrowserProvider;
+  id: string;
+};
+
+type AccountData = {
+  eth: ETH | null;
+  connected_at: Date | null;
+  user: User | null;
 };
 
 type State = {
-  data: AuthData;
-  set_data: (params: Partial<AuthData>) => void;
+  data: AccountData;
+  set_data: (params: Partial<AccountData>) => void;
   reset: () => void;
 };
 
-const initial: AuthData = {
-  jwt_token: null,
-  refresh: null,
+const initial: AccountData = {
+  connected_at: null,
+  eth: null,
   user: null,
-  expires: new Date(),
 };
 
-export const useAuth = create<State>()(
+export const useAccount = create<State>()(
   persist(
     (set, get) => ({
       data: initial,

@@ -1,8 +1,8 @@
-import {ReactNode} from 'react';
+import { ReactNode } from 'react';
 
 type Props = {
-	children?: ReactNode;
+  children?: ReactNode;
 };
 export const AuthGate = (props: Props) => {
-	return <>{props.children}</>;
+  return <>{props.children}</>;
 };

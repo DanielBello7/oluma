@@ -1,20 +1,34 @@
-import {Input, Button, Label} from '@/components/ui';
+'use client';
+
+import { Spinner } from '@/components/index';
+import { Button, Input, Label } from '@/components/ui';
+import { useLogic } from './use-logic';
 
 export const Forms = () => {
-	return (
-		<div className="flex flex-col gap-6">
-			<div className="grid gap-3">
-				<Label htmlFor="email">Email</Label>
-				<Input
-					id="email"
-					type="email"
-					placeholder="m@example.com"
-					required
-				/>
-			</div>
-			<Button type="submit" className="w-full">
-				Login
-			</Button>
-		</div>
-	);
+  // prettier-ignore
+  const { 
+		handleSubmit, 
+		register, 
+		submit,
+		isLoading, 
+	} = useLogic();
+
+  return (
+    <form className="flex flex-col gap-6" onSubmit={handleSubmit(submit)}>
+      <div className="grid gap-3">
+        <Label htmlFor="email">Email</Label>
+        <Input
+          id="email"
+          type="email"
+          disabled={isLoading}
+          placeholder="m@example.com"
+          required
+          {...register('email')}
+        />
+      </div>
+      <Button type="submit" className="w-full" disabled={isLoading}>
+        {isLoading ? <Spinner /> : 'Login'}
+      </Button>
+    </form>
+  );
 };
