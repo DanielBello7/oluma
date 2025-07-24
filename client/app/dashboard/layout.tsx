@@ -1,13 +1,10 @@
-import { AuthGate, Dashboard } from '@/features';
+'use client';
+import { Dashboard } from '@/features';
 import { ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
 };
 export default function DashboardLayout(props: Props) {
-  return (
-    <AuthGate>
-      <Dashboard>{props.children}</Dashboard>
-    </AuthGate>
-  );
+  return <Dashboard>{props.children}</Dashboard>;
 }

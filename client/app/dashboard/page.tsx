@@ -1,4 +1,5 @@
-import {Home} from '@/features';
+'use client';
+import { Home } from '@/features';
 export default function DashboardHomePage() {
-	return <Home />;
+  return <Home />;
 }

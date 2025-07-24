@@ -17,8 +17,10 @@ type AccountData = {
 
 type State = {
   data: AccountData;
+  hydrated: boolean;
   set_data: (params: Partial<AccountData>) => void;
   reset: () => void;
+  set_has_hydrated: () => void;
 };
 
 const initial: AccountData = {
@@ -31,6 +33,10 @@ export const useAccount = create<State>()(
   persist(
     (set, get) => ({
       data: initial,
+      hydrated: false as boolean,
+      set_has_hydrated() {
+        set({ hydrated: true });
+      },
       reset() {
         set({
           data: initial,
@@ -49,6 +55,17 @@ export const useAccount = create<State>()(
     {
       name: 'auth-storage',
       storage: createJSONStorage(() => localStorage),
+      partialize: (state) => ({
+        data: {
+          connected_at: state.data.connected_at,
+          user: state.data.user,
+        },
+      }),
+      onRehydrateStorage(state) {
+        return () => {
+          state.set_has_hydrated();
+        };
+      },
     },
   ),
 );

@@ -1,29 +1,29 @@
 import {
-	Sidebar,
-	SidebarContent,
-	SidebarGroup,
-	SidebarGroupContent,
-	SidebarGroupLabel,
-	SidebarMenu,
+  Sidebar,
+  SidebarContent,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarMenu,
 } from '@/components/ui';
-import {sidebaritems} from './data';
-import {Item} from './item';
+import { sidebaritems } from './data';
+import { Item } from './item';
 
 export const AppSidebar = () => {
-	return (
-		<Sidebar className="h-full" collapsible="icon">
-			<SidebarContent>
-				<SidebarGroup>
-					<SidebarGroupLabel>Application</SidebarGroupLabel>
-					<SidebarGroupContent>
-						<SidebarMenu>
-							{sidebaritems.map((item) => (
-								<Item {...item} key={item.url} />
-							))}
-						</SidebarMenu>
-					</SidebarGroupContent>
-				</SidebarGroup>
-			</SidebarContent>
-		</Sidebar>
-	);
+  return (
+    <Sidebar className="h-full" collapsible="icon">
+      <SidebarContent>
+        <SidebarGroup>
+          <SidebarGroupLabel>Application</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {sidebaritems.map((item, idx) => (
+                <Item {...item} key={idx} />
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+      </SidebarContent>
+    </Sidebar>
+  );
 };
